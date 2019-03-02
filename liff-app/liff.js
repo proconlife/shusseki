@@ -273,9 +273,9 @@ function liffToggleDeviceLedState(state) {
 liff.getProfile()
 .then(profile => {
   const name   = profile.displayName
-  const el     = document.getElementById("info");
-  el.innerText = name;
+  const info   = document.getElementById("info");
+  info.innerText = name;
 })
 .catch((err) => {
-  console.log('error', err);
+  info.innerText = err;
 });
