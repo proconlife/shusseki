@@ -269,13 +269,3 @@ function liffToggleDeviceLedState(state) {
         uiStatusError(makeErrorMsg(error), false);
     });
 }
-
-liff.getProfile()
-.then(profile => {
-  const name   = profile.displayName
-  const info   = document.getElementById("info");
-  info.innerText = name;
-})
-.catch((err) => {
-  info.innerText = err;
-});
