@@ -130,18 +130,6 @@ function makeErrorMsg(errorObj) {
 
 function initializeApp() {
     liff.init(() => initializeLiff(), error => uiStatusError(makeErrorMsg(error), false));
-
-    $(function(){
-      $("#info").text("none");
-      liff.getProfile()
-      .then(profile => {
-        const name   = profile.displayName
-        $("#info").text(name);
-      })
-      .catch((err) => {
-        $("#info").text("err");
-      });
-    });
 }
 
 function initializeLiff() {
@@ -150,8 +138,19 @@ function initializeLiff() {
     }).catch(error => {
         uiStatusError(makeErrorMsg(error), false);
     });
+    const uuid = document.getElementById("service-uuid");
+    uuid.innerText = USER_SERVICE_UUID;
     
-    
+    const info = document.getElementById("service-uuid");
+
+    liff.getProfile()
+      .then(profile => {
+        const name   = profile.displayName
+        info.innerText = name;
+      })
+      .catch((err) => {
+        info.innerText = err;
+      });
 }
 
 function liffCheckAvailablityAndDo(callbackIfAvailable) {
