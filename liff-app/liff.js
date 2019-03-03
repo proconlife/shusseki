@@ -141,7 +141,7 @@ function initializeLiff() {
     const uuid = document.getElementById("service-uuid");
     uuid.innerText = USER_SERVICE_UUID;
     
-    const info = document.getElementById("service-uuid");
+    const info = document.getElementById("info");
 
     liff.getProfile()
       .then(profile => {
