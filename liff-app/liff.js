@@ -168,17 +168,19 @@ function initializeLiff() {
                 'X-Cybozu-API-Token' : '4YTeaERLQMT9U6HSecNzjPdog1J93xEmuNjfrSLb',
                 'Content-Type' : 'application/json'
             },
-            data: JSON.stringify({
-                "app" : 6,
-                "record" : {
-                    "deviceName" : {
-                        "value" : USER_SERVICE_UUID
-                     },
-                    "name" : {
-                        "value" : profile.displayName
-                    }
-                }
-            })
+            data: JSON.stringify(
+            {
+    "app": 6,
+    "record": {
+        "deviceName": {
+            "value": "post test device"
+        },
+        "name": {
+            "value": "post test name"
+        } 
+    }
+}
+            )
         })
         .done( (data) => { $('#ajax').html("<p>ajax success " + JSON.stringify(data) + "</p>")} )
         .fail( (data) => { $('#ajax').html("<p>ajax failed " + JSON.stringify(data) + "</p>")} );
