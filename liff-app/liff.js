@@ -170,17 +170,16 @@ function initializeLiff() {
             },
             data: JSON.stringify(
             {
-    "app": 6,
-    "record": {
-        "deviceName": {
-            "value": "post test device"
-        },
-        "name": {
-            "value": "post test name"
-        } 
-    }
-}
-            )
+                "app": 6,
+                "record": {
+                    "deviceName": {
+                        "value": PSDI_SERVICE_UUID
+                    },
+                    "name": {
+                        "value": profile.displayName
+                    } 
+                }
+            })
         })
         .done( (data) => { $('#ajax').html("<p>ajax success " + JSON.stringify(data) + "</p>")} )
         .fail( (data) => { $('#ajax').html("<p>ajax failed " + JSON.stringify(data) + "</p>")} );
