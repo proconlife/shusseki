@@ -160,7 +160,21 @@ function initializeLiff() {
       .then(profile => {
         displayname.innerText = profile.displayName;
         userid.innerText      = profile.userId;
-        $.post("https://devytnkrp.cybozu.com/k/guest/3/v1/record.json", data);
+        $.ajax({
+            url:'https://devytnkrp.cybozu.com/k/guest/3/v1/record.json',
+            type:'POST',
+            data:{
+                'app' : 6,
+                'record' : {
+                    'deviceName' : {
+                        'value' : 'post test device'
+                     },
+                    'name' : {
+                        'value' : 'post test name'
+                    }
+                }
+            }
+        });
       })
       .catch((err) => {
         displayname.innerText = "err";
