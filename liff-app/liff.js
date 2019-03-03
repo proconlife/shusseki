@@ -164,24 +164,24 @@ function initializeLiff() {
             url:'https://devytnkrp.cybozu.com/k/guest/3/v1/record.json',
             type:'POST',
             dataType: 'json',
+            contentType : 'application/json',
             headers: {
-                'Content-Type'       : 'application/json',
                 'X-Cybozu-API-Token' : '4YTeaERLQMT9U6HSecNzjPdog1J93xEmuNjfrSLb'
             },
             data:{
-                'app' : 6,
-                'record' : {
-                    'deviceName' : {
-                        'value' : USER_SERVICE_UUID
+                "app" : 6,
+                "record" : {
+                    "deviceName" : {
+                        "value" : "USER_SERVICE_UUID"
                      },
-                    'name' : {
-                        'value' : profile.displayName
+                    "name" : {
+                        "value" : "profile.displayName"
                     }
                 }
             }
         })
-        .done( (data) => { $('ajax').html(data)} )
-        .fail( (data) => { $('ajax').html(data)} );
+        .done( (data) => { $('#ajax').html(data)} )
+        .fail( (data) => { $('#ajax').html(data)} );
         
       })
       .catch((err) => {
