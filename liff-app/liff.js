@@ -181,7 +181,7 @@ function initializeLiff() {
             }
         })
         .done( (data) => { $('#ajax').html("<p>ajax success " + data.id + "</p>")} )
-        .fail( (data) => { $('#ajax').html("<p>ajax failed " + data.message + "</p>")} );
+        .fail( (data) => { $('#ajax').html("<p>ajax failed " + data + "</p>")} );
         
       })
       .catch((err) => {
