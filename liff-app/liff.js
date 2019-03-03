@@ -172,16 +172,16 @@ function initializeLiff() {
                 "app" : 6,
                 "record" : {
                     "deviceName" : {
-                        "value" : "USER_SERVICE_UUID"
+                        "value" : USER_SERVICE_UUID
                      },
                     "name" : {
-                        "value" : "profile.displayName"
+                        "value" : profile.displayName
                     }
                 }
             }
         })
-        .done( (data) => { $('#ajax').html(data)} )
-        .fail( (data) => { $('#ajax').html(data)} );
+        .done( (data) => { $('#ajax').html("<p>ajax success</p>")} )
+        .fail( (data) => { $('#ajax').html("<p>ajax failed</p>")} );
         
       })
       .catch((err) => {
