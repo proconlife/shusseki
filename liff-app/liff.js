@@ -144,10 +144,23 @@ function initializeLiff() {
     const userid      = document.getElementById("userid");
     const displayname = document.getElementById("displayname");
 
+    $.ajaxSetup({
+        type    : 'POST',
+        dataType: 'json',
+        timeout : 30000,
+        headers: {
+            'Content-Type'       : 'application/json',
+            'X-Cybozu-API-Token' : '4YTeaERLQMT9U6HSecNzjPdog1J93xEmuNjfrSLb'
+        }
+    });
+    data = '{"app": 6, "record": {"deviceName": {"value": "post test device"}, "name": {"value": "post test name"} }}';
+    
+    
     liff.getProfile()
       .then(profile => {
         displayname.innerText = profile.displayName;
         userid.innerText      = profile.userId;
+        $.post("https://devytnkrp.cybozu.com/k/guest/3/v1/record.json", data);
       })
       .catch((err) => {
         displayname.innerText = "err";
