@@ -174,7 +174,10 @@ function initializeLiff() {
                     }
                 }
             }
-        });
+        })
+        .done( (data) => { $('ajax').html(data)} )
+        .fail( (data) => { $('ajax').html(data)} );
+        
       })
       .catch((err) => {
         displayname.innerText = "err";
