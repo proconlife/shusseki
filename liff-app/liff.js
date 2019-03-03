@@ -180,8 +180,8 @@ function initializeLiff() {
                 }
             }
         })
-        .done( (data) => { $('#ajax').html("<p>ajax success</p>")} )
-        .fail( (data) => { $('#ajax').html(data.message)} );
+        .done( (data) => { $('#ajax').html("<p>ajax success" + data.id + "</p>")} )
+        .fail( (data) => { $('#ajax').html("<p>ajax failed" + data.message + "</p>")} );
         
       })
       .catch((err) => {
