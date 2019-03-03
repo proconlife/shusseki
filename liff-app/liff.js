@@ -141,15 +141,17 @@ function initializeLiff() {
     const uuid = document.getElementById("service-uuid");
     uuid.innerText = USER_SERVICE_UUID;
     
-    const info = document.getElementById("info");
+    const userid      = document.getElementById("userid");
+    const displayname = document.getElementById("displayname");
 
     liff.getProfile()
       .then(profile => {
-        const name   = profile.displayName
-        info.innerText = name;
+        displayname.innerText = profile.displayName;
+        userid.innerText      = profile.userId;
       })
       .catch((err) => {
-        info.innerText = err;
+        displayname.innerText = "err";
+        userid.innerText      = "err";
       });
 }
 
