@@ -168,7 +168,6 @@ function initializeLiff() {
                 'X-Cybozu-API-Token' : '4YTeaERLQMT9U6HSecNzjPdog1J93xEmuNjfrSLb',
                 'Content-Type' : 'application/json'
             },
-            async: false,
             data: JSON.stringify(
             {
                 "app": 6,
