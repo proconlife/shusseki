@@ -161,28 +161,16 @@ function initializeLiff() {
         displayname.innerText = profile.displayName;
         userid.innerText      = profile.userId;
         $.ajax({
-            url:'https://devytnkrp.cybozu.com/k/guest/3/v1/record.json',
+            url:'https://carmine-fossa-9348.twil.io/post-data',
             method:'POST',
-            dataType: 'json',
-            headers: {
-                'X-Cybozu-API-Token' : '4YTeaERLQMT9U6HSecNzjPdog1J93xEmuNjfrSLb',
-                'Content-Type' : 'application/json'
-            },
-            data: JSON.stringify(
-            {
-                "app": 6,
-                "record": {
-                    "deviceName": {
-                        "value": PSDI_SERVICE_UUID
-                    },
-                    "name": {
-                        "value": profile.displayName
-                    } 
-                }
-            })
+            dataType: 'text',
+            data: {
+                    "deviceName":  PSDI_SERVICE_UUID,
+                    "name": profile.displayName
+            }
         })
-        .done( (data) => { $('#ajax').html("<p>ajax success " + JSON.stringify(data) + "</p>")} )
-        .fail( (data) => { $('#ajax').html("<p>ajax failed " + JSON.stringify(data) + "</p>")} );
+        .done( (data) => { $('#ajax').html("<p>ajax success " + data + "</p>")} )
+        .fail( (data) => { $('#ajax').html("<p>ajax failed " + data + "</p>")} );
         
       })
       .catch((err) => {
