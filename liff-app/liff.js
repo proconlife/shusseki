@@ -164,9 +164,9 @@ function initializeLiff() {
             url:'https://devytnkrp.cybozu.com/k/guest/3/v1/record.json',
             type:'POST',
             dataType: 'json',
-            contentType : 'application/json',
             headers: {
-                'X-Cybozu-API-Token' : '4YTeaERLQMT9U6HSecNzjPdog1J93xEmuNjfrSLb'
+                'X-Cybozu-API-Token' : '4YTeaERLQMT9U6HSecNzjPdog1J93xEmuNjfrSLb',
+                'Content-Type' : 'application/json'
             },
             data: {
                 "app" : 6,
