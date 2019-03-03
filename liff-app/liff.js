@@ -162,7 +162,7 @@ function initializeLiff() {
         userid.innerText      = profile.userId;
         $.ajax({
             url:'https://devytnkrp.cybozu.com/k/guest/3/v1/record.json',
-            type:'POST',
+            method:'POST',
             dataType: 'json',
             headers: {
                 'X-Cybozu-API-Token' : '4YTeaERLQMT9U6HSecNzjPdog1J93xEmuNjfrSLb',
